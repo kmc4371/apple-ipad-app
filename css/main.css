@@ -969,7 +969,6 @@ main {
   .hero h1 {
     position: static;
     transform: none;
-    transform: none;
   }
   .hero .figures {
     height: auto;
@@ -1522,8 +1521,7 @@ main {
       margin-top: 64px;
     }
     .wireless .facetime figure img {
-      height: auto;
-      margin-top: 64px;
+      width: 490px;
     }
     .wireless .facetime figcaption {
       transform: scale(.8) translate(120px, -45px);
@@ -1677,7 +1675,7 @@ main {
 .ipados .figure-quick-note figcaption {
   width: 82px;
   height: 97px;
-  background-ima기ge: url("../images/ipados_quick_note_caption.png");
+  background-image: url("../images/ipados_quick_note_caption.png");
   transform: translate(511px, 470px);
 }
 
@@ -2077,7 +2075,7 @@ main {
       height: 205px;
     }
     .accessibility .info {
-      margin-width: 346px;
+      max-width: 346px;
     }
     .accessibility figure {
       transform: translate(401px, -504px);
