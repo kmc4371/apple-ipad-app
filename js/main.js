@@ -113,6 +113,29 @@ window.addEventListener('resize', function () {
   }
 })
 
+//
+const navEl = document.querySelector('nav')
+const navMenuToggleEl = navEl.querySelector('.menu-toggler')
+const navMenuShadowEl = navEl.querySelector('.shadow')
+navMenuToggleEl.addEventListener('click', function () {
+  if (navEl.classList.contains('menuing')) {
+    hideNavMenu()
+  } else {
+    showNavMenu()
+  }
+})
+navEl.addEventListener('click', function (event) {
+  event.stopPropagation()
+})
+navMenuShadowEl.addEventListener('click', hideNavMenu)
+window.addEventListener('click', hideNavMenu)
+function showNavMenu () {
+  navEl.classList.add('menuing')
+}
+function hideNavMenu () {
+  navEl.classList.remove('menuing')
+}
+
 // 요소의 가시성 관찰
 const io = new IntersectionObserver(function (entries) {
   entries.forEach(function (entry) {
@@ -189,6 +212,7 @@ navigations.forEach(function (nav) {
   `
   <h3>
     <span class="text">${nav.title}</span>
+    <span class="icon">+</span>
   </h3>
   <ul>
     ${mapList}
@@ -200,3 +224,11 @@ navigations.forEach(function (nav) {
 
 const thisYearEl = document.querySelector('span.this-year')
 thisYearEl.textContent = new Date().getFullYear()
+
+const mapEls =document.querySelectorAll('footer .navigations .map')
+mapEls.forEach(function (el) {
+  const h3El = el.querySelector('h3')
+  h3El.addEventListener('click', function () {
+    el.classList.toggle('active')
+  })
+})
